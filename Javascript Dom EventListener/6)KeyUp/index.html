@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+        body{
+            display:flex ;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            height: 60vh;
+        }
+
+        #log{
+            font-size: 40px;
+        }
+
+        input{
+            padding: 2vw 8vw ;
+            font-size: 40px;
+        }
+    </style>
+  </head>
+  <body>
+    <input placeholder="Click here, then press and release a key." size="40" />
+    <p id="log"></p>
+
+    <script>
+        const input = document.querySelector("input");
+const log = document.getElementById("log");
+
+input.addEventListener("keyup", logKey);
+
+function logKey(e) {
+  log.textContent += ` ${e.code}`;
+}
+
+    </script>
+  </body>
+</html>

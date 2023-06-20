@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mouse Over</title>
+    <!-- CSS style Sheet -->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        outline: 0;
+      }
+
+      body {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: limegreen;
+      }
+      #container {
+        width: 50vw;
+        height: 40vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        border: 2px solid #000000;
+        background-color: wheat;
+      }
+      #li {
+        font-size: 4vw;
+        margin-left: 5vw;
+        font-weight: 500;
+        color: blueviolet;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Mouse Over  -->
+    <div id="container">
+      <ul id="ul">
+        <li id="li">List Item 1</li>
+      </ul>
+    </div>
+
+    <!-- javascript code -->
+
+    <script>
+        const li = document.getElementById("li");
+        const container = document.getElementById("container");
+
+        li.addEventListener("mouseover",()=>{
+            alert("Don't touch My list Item ");
+            li.style.color = "black";
+            container.innerText = "You have touched my list item.  Refresh Again!";
+            container.style.fontSize = "4vw";
+        });
+    </script>
+  </body>
+</html>

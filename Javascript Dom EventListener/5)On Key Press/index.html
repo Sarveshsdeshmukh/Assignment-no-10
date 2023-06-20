@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>On Key Press</title>
+    <!-- Style sheet for the css -->
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        height: 40vh;
+      }
+
+      #input {
+        width: 500px;
+        font-size: 26px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- On Key Press -->
+    <div id="container">
+      <input type="text" id="input" placeholder="Enter Any Key" />
+    </div>
+    <p id="display"></p>
+    <!-- Javascript -->
+    <script>
+      const container = document.getElementById("container");
+      const input = document.getElementById("input");
+      const display = document.getElementById("display");
+
+      input.addEventListener("keypress", (e) => {
+        display.innerHTML =  e.key;
+        display.style.display = "block";
+        display.style.fontSize = "50px";
+        display.style.color = "black";
+      });
+    </script>
+  </body>
+</html>

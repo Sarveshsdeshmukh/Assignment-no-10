@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mouse Out</title>
+  </head>
+  <!-- Css style sheet -->
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      outline: 0;
+    }
+
+    body {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: red;
+    }
+
+    #message{
+        font-size: 2vw;
+        color: black;
+    }
+
+    #box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      width: 40vw;
+      height: 60vh;
+      border: 2px solid black;
+      background-color: #fff;
+    }
+  </style>
+  <body>
+    <!-- Mouse Out  -->
+
+    <div id="box">
+      <p id="message"></p>
+    </div>
+
+    <!-- javascript Code -->
+
+    <script>
+      const box = document.getElementById("box");
+      const message = document.getElementById("message");
+
+      box.addEventListener("mouseout", () => {
+        message.innerText = "This is Safe area Please stay in this area !";
+        setTimeout(() => {box.style.backgroundColor= "green";}, 500);
+        alert("Red Area is Dangerous ! ")
+      });
+    </script>
+  </body>
+</html>

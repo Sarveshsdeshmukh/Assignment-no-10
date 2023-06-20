@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Double Click</title>
+</head>
+    <!-- Styles css -->
+    <style>
+          *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: 0;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #b87e9c;
+}
+#container{
+    width: 50vw;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 5vh;
+    border: 2px solid #000000;
+    background-image: linear-gradient(#00ffff,#ffa500,#aaff00);
+}
+
+#h1{
+    font-size: 2vw;
+    font-weight: 300;
+    color: #ffffff;
+}
+
+button{
+    width: 16vw;
+    height: 4vw;
+    background-color: hsl(0, 0%, 50%);
+    color: #ffffff;
+    border: none;
+    font-size: 2vw;
+    border-radius: 2vw;
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+img{
+    border: 2px solid black;
+    background-color: white;
+}
+    </style>
+<body>
+        <!-- Creating the two buttons -->
+
+        <div id="container">
+            <h1 id="h1"></h1>
+            <img id="img" src="./PWSkills-main.png" alt="PWSKILLS">
+            <div>
+                <button id="zoomIn">ZOOM IN </button>
+                <button id="reset">RESET</button>
+                <button id="zoomOut">ZOOM OUT</button>
+            </div>
+
+        </div>
+
+        <!-- javascript  -->
+
+        <script>
+            const img = document.getElementById("img");
+            const zoomIn = document.getElementById("zoomIn");
+            const zoomOut = document.getElementById("zoomOut");
+            const reset = document.getElementById("reset");
+            const h1 = document.getElementById("h1");
+
+            zoomIn.addEventListener("dblclick",()=>{
+                h1.innerText = "THIS IS ZOOM IN  IMAGE"
+                img.style.width= "40vw";
+                img.style.height= "40vh";
+            });
+
+            reset.addEventListener("dblclick",()=>{
+                h1.innerText = "THIS IS ORIGINAL IMAGE"
+                img.style.width= "30vw";
+                img.style.height= "30vh";
+            });
+
+            zoomOut.addEventListener("dblclick",()=>{
+                h1.innerText = "THIS IS ZOOM OUT IMAGE"
+                img.style.width= "15vw";
+                img.style.height= "15vh";
+            });
+
+
+        </script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" href="./style.css"> -->
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: 0;
+}
+
+#mainBody{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 5vh;
+}
+
+#h1{
+    font-size: 8vw;
+    font-weight: 500;
+}
+
+#button{
+    width: 30vw;
+    height: 6vw;
+    background-color: #808080;
+    color: #ffffff;
+    border: none;
+    font-size: 2vw;
+    border-radius: 2vw;
+}
+    </style>
+
+    <title>OnClick Event Listener</title>
+  </head>
+  <body>
+    <!-- Html Button -->
+    <div id="mainBody">
+      <h1 id="h1">Hello Bacho !</h1>
+      <button id="button">Click me To Change Heading color</button>
+    </div>
+
+    <!-- <script src="./script.js"></script> -->
+    <script>
+        // Jay Shree Ram
+
+const  button = document.getElementById("button"); 
+const  mainBody = document.getElementById("mainBody"); 
+const  h1 = document.getElementById("h1"); 
+
+const click =()=> {
+    let cons = "#";
+    let  color = "0123456789abcdef"
+
+    for(let i = 0 ; i < 6 ; i++){
+        cons = cons + color[Math.floor(Math.random()*16)];
+    }
+    return cons;
+}
+
+console.log(click());
+
+const onClick = ()=>{
+    h1.style.color = click();
+    h1.style.fontSize = "10vw";
+}
+
+button.addEventListener("click",onClick);
+    </script>
+  </body>
+</html>
